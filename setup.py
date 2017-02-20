@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
           name = 'cleverwrap',
           packages = ['cleverwrap'],
-          version = '0.2',
+          version = '0.2.1',
           description = 'A wrapper for the official cleverbot.com API',
           author = 'Andrew Edwards',
           author_email = 'andrewthomasedwards@gmail.com',
