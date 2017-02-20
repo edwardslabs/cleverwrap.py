@@ -11,10 +11,10 @@ setup(
           url = 'https://github.com/edwardslabs/cleverwrap.py',
           download_url = 'https://github.com/edwardslabs/cleverwrap.py/tarball/0.2.3.1',
           keywords = ['cleverbot', 'wrapper', 'clever'],
-          classifiers =(
+          classifiers =[
               'Programming Language :: Python :: 3 :: Only',
               'License :: OSI Approved :: MIT License',
               'Intended Audience :: Developers',
-              'Natural Language :: English'
-          ),
+              'Natural Language :: English',
+          ],
 )
