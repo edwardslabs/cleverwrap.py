@@ -74,7 +74,6 @@ class CleverWrap:
         # catch errors, print then exit.
         except requests.exceptions.RequestException as e:
             print(e)
-            sys.exit(1)
         return r.json()
 
 
