@@ -80,7 +80,7 @@ class CleverWrap:
     def _process_reply(self, reply):
         """ take the cleverbot.com response and populate properties. """
         self.cs = reply.get("cs", None)
-        self.count = int(reply.get("interaction_count", None))
+        self.count = reply.get("interaction_count", None)
         self.output = reply.get("output", None)
         self.convo_id = reply.get("conversation_id", None)
         self.history = {key:value for key, value in reply.items() if key.startswith("interaction")}
