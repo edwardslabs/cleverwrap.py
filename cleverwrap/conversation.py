@@ -1,16 +1,11 @@
-import requests
+from cleverwrap.response import Response
 
 
 class Conversation:
     def __init__(self, api):
         self.api = api
         self.cs = ""
-        self.count = 0
-        self.output = ""
         self.convo_id = ""
-        self.history = {}
-        self.time_taken = 0
-        self.time_elapsed = 0
 
     def say(self, text):
         """
@@ -27,19 +22,10 @@ class Conversation:
             "wrapper": "CleverWrap.py"
         }
 
-        reply = self.api._send(params)
-        self._process_reply(reply)
-        return self.output
-
-    def _process_reply(self, reply):
-        """ take the cleverbot.com response and populate properties. """
-        self.cs = reply.get("cs", None)
-        self.count = int(reply.get("interaction_count", None))
-        self.output = reply.get("output", None)
-        self.convo_id = reply.get("conversation_id", None)
-        self.history = {key: value for key, value in reply.items() if key.startswith("interaction")}
-        self.time_taken = int(reply.get("time_taken", None))
-        self.time_elapsed = int(reply.get("time_elapsed", None))
+        reply = Response(self.api._send(params))
+        self.cs = reply.cs
+        self.convo_id = reply.convo_id
+        return reply.output
 
     def reset(self):
         """
