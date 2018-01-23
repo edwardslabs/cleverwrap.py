@@ -16,10 +16,8 @@ class Conversation:
 
         params = {
             "input": text,
-            "key": self.api.key,
             "cs": self.cs,
             "conversation_id": self.convo_id,
-            "wrapper": "CleverWrap.py"
         }
 
         reply = Response(self.api._send(params))

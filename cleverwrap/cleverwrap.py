@@ -57,6 +57,11 @@ class CleverWrap:
         :type params: dict
         Returns: dict
         """
+        params.update(
+            key=self.key,
+            wrapper="CleverWrap.py",
+        )
+
         # Get a response
         try:
             r = requests.get(self.url, params=params)
