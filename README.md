@@ -18,6 +18,10 @@ You can also clone this repository and import the library directly.
 >>> cw.say("Hello CleverBot.")
 "Hello Human."
 >>> cw.reset() # resets the conversation ID and conversation state.
+>>> conv = cw.new_conversation()  # Start a new conversation with CleverBot
+>>> conv.say("Hellon there.")
+"Hello Human."
+>>> conv.reset()  # Reset the conversation state
 ```
 
 # License
