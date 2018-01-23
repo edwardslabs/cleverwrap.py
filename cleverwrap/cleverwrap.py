@@ -60,9 +60,12 @@ class CleverWrap:
         # Get a response
         try:
             r = requests.get(self.url, params=params)
-        # catch errors, print then exit.
+            r.raise_for_status()
         except requests.exceptions.RequestException as e:
+            # catch errors, print then exit.
             print(e)
+            raise  # Propagate the exception up the call stack so the calling code can catch it
+
         return r.json()
 
     def reset(self):
