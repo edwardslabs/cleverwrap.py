@@ -21,15 +21,14 @@ from cleverwrap.conversation import Conversation
 class CleverWrap:
     """ A simple wrapper class for the www.cleverbot.com api. """
 
-    url = "https://www.cleverbot.com/getreply"
-
-    def __init__(self, api_key, name="CleverBot"):
+    def __init__(self, api_key, name="CleverBot", url="https://www.cleverbot.com/getreply"):
         """ Initialize the class with an api key and optional name 
         :type api_key: str
         :type name: str
         """
-        self.name = name
         self.key = api_key
+        self.name = name
+        self.url = url
         self._default_conversation = None
 
     def new_conversation(self):
