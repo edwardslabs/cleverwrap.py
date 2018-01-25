@@ -74,7 +74,7 @@ class CleverWrap:
         # catch errors, print then exit.
         except requests.exceptions.RequestException as e:
             print(e)
-        return r.json()
+        return r.json(strict=False)  # Ignore possible control codes in returned data
 
 
     def _process_reply(self, reply):
