@@ -70,7 +70,7 @@ class CleverWrap:
             print(e)
             raise  # Propagate the exception up the call stack so the calling code can catch it
 
-        return r.json()
+        return r.json(strict=False)  # Ignore possible control codes in returned data
 
     def reset(self):
         """
